@@ -3,6 +3,7 @@ Linux Assessment-2
 1. What is the command to make a Bash script executable? Describe how you would give execution permissions to a script named backup.sh.
 #!bin/bash -bash script
 Chmod +x backup.sh
+./backup.sh
 
 2.What command would you use to count the number of lines in a file called data.txt?
 vim data.txt
