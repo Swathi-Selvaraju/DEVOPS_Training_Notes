@@ -1,0 +1,88 @@
+Git Assessment-2 
+
+ 
+
+1.How do you rename the current branch you are on to a new-branch-name? 
+
+ git branch -m old-branch-name new-branch-name
+
+2.What is the command to stash your changes and include untracked files?
+ 
+  git stash -u
+
+3.How would you merge changes from the branch feature-new into your current branch? 
+
+  git merge feature-new
+
+4.What command do you use to view the differences between your working directory and the last commit? 
+
+  git diff
+   
+5.Explain how to resolve a merge conflict that occurs during a git merge. What steps would you take? 
+
+        git status ->to see which file is conflict and open it
+	git add filename ->then resolve conflict file and add
+	git commit "message" ->after resolving commit it
+
+
+6.Explain the purpose and use case of git rebase with an example. How does it differ from git merge? 
+
+Git rebase and git merge are both used to integrate changes from one branch into another.Git rebase is used to move or combine a sequence of commits to a new base commit.
+Purpose:
+This useful for updating feature branches, Rewrites history, creating a linear sequence of commits. Useful for a clean history.
+Example:
+If you have two branches main and feature.You start working on feature, but main has received some new commits. you can rebase feature onto main to bring it up to date:
+git checkout feature
+git rebase main
+This replays your commits in feature on top of the latest main branch commits.
+
+7.What does the command git cherry-pick <commit hash> do? Provide a scenario where you might use it. 
+
+  git cherry-pick <commit-hash> -> a specific commit from one branch to another without merging the entire branch.
+ 
+Scenario: If I'm working on main branch file1 ,I made many commit in file1,if i want to goback twostate previous commit mean i use cherry-pick command 
+
+
+8.Describe the differences between git reset --soft, git reset --mixed, and git reset --hard. When would you use each? 
+git reset --soft  => Moves the branch pointer to a specified commit but leaves both the staging area and working directory untouched.
+Use --soft if you want to "undo" a commit but keep the changes staged so that you can recommit them with additional modifications or combine them with other changes
+
+git reset --mixed =>Moves the branch pointer to a specified commit and resets the staging area (index) to match that commit, but leaves the working directory unchanged.
+when you want to "undo" some commits and place those changes back into your working directory so you can review, modify.
+
+git reset --hard =>Moves the branch pointer to a specified commit and resets both the staging area and working directory to match that commit.
+Use --hard when you want to permanently discard all changes after a specific commit, returning the project to a clean slate.
+
+9.Describe how you would revert a commit that has already been pushed to a shared repository. What command would you use, and what should you consider before doing this? 
+git log
+git revert <commit-hash>
+git push
+
+
+10.What is the difference between git pull --rebase and git pull? When would you prefer one over the other?
+
+git pull --rebase =>it fetches changes from the remote branch and rebases your local commits on top of the latest commits from the remote branch.
+
+git pull =>it fetches changes from the remote branch and then merges them into your current branch.
+
+11.How can you view the changes made by a specific commit? What command do you use? 
+   show <commit-hash>
+  To view the changes made by a specific commit in Git
+
+12.What is branch protection in Git, and why is it important for a collaborative development environment? 
+
+     It refers to a set of rules and restrictions applied to specific branches in a repository to prevent unauthorized or potentially harmful changes. This is crucial in a collaborative development environment to ensure code quality, maintain stability, and facilitate smooth collaboration among team members.
+
+13.Explain how to set up branch protection rules in GitHub. 
+   1.Go to your repository on GitHub.
+   2.lick on the Settings tab
+   3.Scroll down to the Code and automation section on the left sidebar,  and click on Branches.
+   4.Under the Branch protection rules section, click Add rule.
+   5.Type specify branch name and select protect setting you want
+   6.click create or save changes.
+
+14.What happens if a user tries to push changes directly to a protected branch?
+    If a user tries to push changes directly to a protected branch, GitHub will prevent the push if the branch protection rules disallow it. The user will see an error message explaining that the branch is protected and that direct pushes are not permitted.
+
+15.What is the purpose of a .gitignore file, and how do you create one? Provide an example of what you might include in it. 
+      The .gitignore file in a Git repository is used to specify which files and directories should be ignored by Git. This is important for excluding files that are not relevant to the project, such as temporary files, build artifacts, or sensitive information that shouldn't be tracked in version control.
