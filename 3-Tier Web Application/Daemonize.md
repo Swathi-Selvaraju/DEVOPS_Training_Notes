@@ -6,7 +6,7 @@
 1. Prepare the Backend:
 
 * Move out from project
-[image]
+![Screenshot 2024-11-29 101542](https://github.com/user-attachments/assets/b39e8fec-d308-423b-8fd7-330a45cedfdf)
 
 * create a /opt/java-backend folder
 ```bash 
