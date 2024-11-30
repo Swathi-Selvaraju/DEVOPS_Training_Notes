@@ -41,7 +41,7 @@ EXPOSE 3000
 # Serve the static files using 'serve'
 CMD ["npx", "serve", "-s", "build", "-l", "3000"]
 ```
-Give permission to `Dockerfile` for access Docker service
+##### Give permission to `Dockerfile` for access Docker service
 ```bash
 sudo chmod +x Dockerfile
 sudo chown -R swathi:swathi Dockerfile
@@ -80,7 +80,8 @@ EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
 ```
 ![Screenshot 2024-11-30 135523](https://github.com/user-attachments/assets/952a8da1-abd7-4090-8621-503387ad6aa4)
-Give Permission to `Docker file` for access
+
+###### Give Permission to `Docker file` for access
 ```bash
 sudo chmod +x Dockerfile
 sudo chown -R swathi:swathi Dockerfile
@@ -157,7 +158,7 @@ volumes:
   mysql-data:
     driver: local
 ```
-Give Permission to `docker-compose.yml` for access
+##### Give Permission to `docker-compose.yml` for access
 ```bash
 sudo chmod +x Dockerfile
 sudo chown -R swathi:swathi docker-compose.yml
@@ -176,8 +177,9 @@ docker-compose build
 docker-compose up -d
 ```
 ![image](https://github.com/user-attachments/assets/8210e429-ec0a-4d5b-874c-b45280de8c87)
-The command `docker-compose up -d` is used to start all the services defined in a `docker-compose.yml` file in detached mode, which means the containers will run in the background instead of attaching their logs to your terminal.
-`docker-compose`
+* `docker-compose up -d`
+This command is used to start all the services defined in a `docker-compose.yml` file in detached mode, which means the containers will run in the background instead of attaching their logs to your terminal.
+* `docker-compose`
 The Docker Compose CLI tool, used to manage multi-container Docker applications.
 
 Check the status of services:
