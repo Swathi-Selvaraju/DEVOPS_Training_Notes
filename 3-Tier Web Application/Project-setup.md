@@ -61,6 +61,8 @@ Install  Maven
         sudo apt -y install nodejs && npm
         node  -v && npm -v
     ```
+    ![Screenshot 2024-11-26 180543](https://github.com/user-attachments/assets/d1ccd443-4157-4563-866b-c161098ec0f5)
+
       ![Screenshot 2024-11-26 180459](https://github.com/user-attachments/assets/8f396518-3c6f-418f-9933-f456e847b5af)
   ![Screenshot (850)](https://github.com/user-attachments/assets/5c992663-cff9-4e97-852d-4ce1c2f50128)
 
