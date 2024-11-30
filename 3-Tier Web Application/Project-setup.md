@@ -45,11 +45,14 @@ Install  Maven
           PATH="$M2_HOME/bin:$PATH"
           export PATH
       ```
+      ![image](https://github.com/user-attachments/assets/ffb808cc-1d9f-43a0-87b3-efedf1d9c919)
+
       * Verify the version of maven, it should be 3.8.8
       ```
           mvn -version    
       ```
-![image](https://github.com/user-attachments/assets/0ad51649-ad16-44ec-89d4-280eb4559db0)
+![image](https://github.com/user-attachments/assets/85c61724-1514-44fd-a61a-28f70e5f77fe)
+
 
   * NodeJs
     ```
