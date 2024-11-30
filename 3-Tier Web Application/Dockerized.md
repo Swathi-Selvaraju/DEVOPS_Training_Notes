@@ -3,7 +3,7 @@ This document provides step-by-step instructions to Dockerize the ReactJS fronte
 
 ## Prerequisites
 * Docker (Ensure Docker is installed and running)
-* Docker Compose (Typically included with Docker Desktop or install separately)
+* Docker Compose (Typically included with Docker Desktop or installed separately)
 
 1. React Frontend
 * Navigate to the frontend folder
@@ -41,11 +41,15 @@ EXPOSE 3000
 # Serve the static files using 'serve'
 CMD ["npx", "serve", "-s", "build", "-l", "3000"]
 ```
-Give permission to Dockerfile for access docker service
+Give permission to `Dockerfile` for access Docker service
+```bash
+sudo chmod +x Dockerfile
+sudo chown -R swathi:swathi Dockerfile
+```
 
 ![image](https://github.com/user-attachments/assets/f9cb9ecf-9354-4283-b9d6-d2ab77786865)
 
-![Screenshot 2024-11-30 134410](https://github.com/user-attachments/assets/be66ea1b-02e2-48b4-bb1b-07d86864ebd1)
+
 
 2.  Spring Boot Backend
 * Navigate to the backend folder
@@ -75,13 +79,15 @@ EXPOSE 8080
 # Run the Spring Boot application
 CMD ["java", "-jar", "app.jar"]
 ```
-Give Permission to dockerfile for access
+Give Permission to `Docker file` for access
 ```bash
 sudo chmod +x Dockerfile
 sudo chown -R swathi:swathi Dockerfile
 ```
 
 ![Screenshot 2024-11-30 135523](https://github.com/user-attachments/assets/952a8da1-abd7-4090-8621-503387ad6aa4)
+![image](https://github.com/user-attachments/assets/0eb89806-58a4-49ca-9f58-f18e69c9bbb4)
+![image](https://github.com/user-attachments/assets/d47c3c90-d652-43a7-86d9-0dfcf1687856)
 
 
 3. Docker Compose Configuration
@@ -155,7 +161,7 @@ volumes:
 Give Permission to dockerfile for access
 ```bash
 sudo chmod +x Dockerfile
-sudo chown -R swathi:swathi Dockerfile
+sudo chown -R swathi:swathi docker-compose.yml
 ```
 ![image](https://github.com/user-attachments/assets/b616a046-7dde-4c6d-a6c7-f2d4906f33a4)
 
@@ -170,6 +176,7 @@ docker-compose build
 ``` bash
 docker-compose up -d
 ```
+![image](https://github.com/user-attachments/assets/8210e429-ec0a-4d5b-874c-b45280de8c87)
 
 Check the status of services:
 ```bash
