@@ -6,17 +6,17 @@ This document provides step-by-step instructions to Dockerize the ReactJS fronte
 * Docker Compose (Typically included with Docker Desktop or installed separately)
 
 1. React Frontend
-* Navigate to the frontend folder
+* Navigate to the `frontend folder`
 ```bash
 cd ems-ops-phase-0/react-hooks-frontend/
 ```
-* Create a Dockerfile
+* Create a `Dockerfile`
 
 ```bash
 sudo nano Dockerfile
 ```
 * Add the following content:
-dockerfile for frontend
+Dockerfile` for frontend
 ```bash
 
 # Use a lightweight Node.js image
@@ -52,17 +52,17 @@ sudo chown -R swathi:swathi Dockerfile
 
 
 2.  Spring Boot Backend
-* Navigate to the backend folder
+* Navigate to the `backend `folder
 ```bash
 cd ems-ops-phase-0/springboot-backend/
 ```
-* Create a Dockerfile
+* Create a `Dockerfile`
 
 ``` bash
 sudo nano Dockerfile
 ```
 * Add the following content:
-dockerfile for backend
+Dockerfile` for backend
 ```bash
 # Use an OpenJDK image
 FROM openjdk:17-jdk-slim
@@ -79,24 +79,23 @@ EXPOSE 8080
 # Run the Spring Boot application
 CMD ["java", "-jar", "app.jar"]
 ```
+![Screenshot 2024-11-30 135523](https://github.com/user-attachments/assets/952a8da1-abd7-4090-8621-503387ad6aa4)
 Give Permission to `Docker file` for access
 ```bash
 sudo chmod +x Dockerfile
 sudo chown -R swathi:swathi Dockerfile
 ```
-
-![Screenshot 2024-11-30 135523](https://github.com/user-attachments/assets/952a8da1-abd7-4090-8621-503387ad6aa4)
 ![image](https://github.com/user-attachments/assets/0eb89806-58a4-49ca-9f58-f18e69c9bbb4)
 ![image](https://github.com/user-attachments/assets/d47c3c90-d652-43a7-86d9-0dfcf1687856)
 
 
 3. Docker Compose Configuration
-* Navigate to the root folder
+* Navigate to the `root` folder
 ```bash
 cd ems-ops-phase-0/
 ```
 
-* Create a docker-compose.yml file
+* Create a `docker-compose.yml` file
 ```bash
 sudo nano docker-compose.yml
 ```
@@ -158,7 +157,7 @@ volumes:
   mysql-data:
     driver: local
 ```
-Give Permission to dockerfile for access
+Give Permission to `docker-compose.yml` for access
 ```bash
 sudo chmod +x Dockerfile
 sudo chown -R swathi:swathi docker-compose.yml
@@ -166,7 +165,7 @@ sudo chown -R swathi:swathi docker-compose.yml
 ![image](https://github.com/user-attachments/assets/b616a046-7dde-4c6d-a6c7-f2d4906f33a4)
 
 #### Build and Run
-* Build the Docker images:
+* Build the `Docker images`:
 ```bash
 docker-compose build
 ``` 
@@ -177,6 +176,9 @@ docker-compose build
 docker-compose up -d
 ```
 ![image](https://github.com/user-attachments/assets/8210e429-ec0a-4d5b-874c-b45280de8c87)
+The command `docker-compose up -d` is used to start all the services defined in a `docker-compose.yml` file in detached mode, which means the containers will run in the background instead of attaching their logs to your terminal.
+`docker-compose`
+The Docker Compose CLI tool, used to manage multi-container Docker applications.
 
 Check the status of services:
 ```bash
