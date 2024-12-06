@@ -1,21 +1,34 @@
-# Use a lightweight Node.js image
-FROM node:16-alpine
+     FROM node:16 AS build
 
-# Set the working directory
-WORKDIR /app
+     WORKDIR /app
 
-# Copy package files and install dependencies
-COPY package*.json ./
-RUN npm install
+   # Copy local node_modules to avoid network dependency issues
+     COPY package.json package-lock.json ./
+    RUN npm config set timeout 600000 \
+    && npm config set registry https://registry.npmmirror.com \
+   && npm config set strict-ssl false
 
-# Copy the entire application code
-COPY . .
+ COPY . .
+ RUN npm install --offline || npm install --legacy-peer-deps --force
 
-# Build the application
-RUN npm run build
+ RUN npm run build
 
-# Expose port 3000 for the frontend
-EXPOSE 3000
+ FROM nginx:alpine
+ COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 
-# Serve the static files using 'serve'
-CMD ["npx", "serve", "-s", "build", "-l", "3000"]
+    # Use OpenJDK 17 as the base image
+     FROM openjdk:17-jdk-slim
+
+     # Set the working directory
+     WORKDIR /app
+
+     # Copy the JAR file of the Spring Boot application (after building it locally)
+     COPY target/springboot-backend-0.0.1-SNAPSHOT.jar app.jar
+
+    # Expose the port that the backend service will listen to
+     EXPOSE 8080
+
+    # Run the Spring Boot application
+    CMD ["java", "-jar", "app.jar"]
