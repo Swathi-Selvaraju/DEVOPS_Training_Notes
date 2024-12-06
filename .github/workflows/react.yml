@@ -31,6 +31,8 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker buildx build --platform linux/amd64,linux/arm64 \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest . \
-            --push
+        docker buildx build --platform linux/amd64,linux/arm64 \
+        -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest \
+        -f Dockerfile . \
+        --push
+
