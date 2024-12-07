@@ -1,0 +1,27 @@
+name: Run Date Script
+
+# Trigger workflow on push or pull request events
+on:
+  push:
+    branches:
+      - main
+ # pull_request:
+
+# Define the jobs
+jobs:
+  run-date-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository to access the script
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Set executable permission for the script
+      - name: Make date.sh Executable
+        run: chmod +x ./date.sh
+
+      # Run the date.sh script
+      - name: Run date.sh Script
+        run: ./date.sh
+
