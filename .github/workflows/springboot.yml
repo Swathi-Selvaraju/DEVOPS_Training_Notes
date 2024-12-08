@@ -40,9 +40,10 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t my-springboot-app .
+        docker build -t my-springboot-app -f backend/Dockerfile.backend backend/
         echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
         docker tag my-springboot-app:latest swathiselvaraju/my-springboot-app:latest
         docker push swathiselvaraju/my-springboot-app:latest
+
       env:
         DOCKER_BUILDKIT: 1
