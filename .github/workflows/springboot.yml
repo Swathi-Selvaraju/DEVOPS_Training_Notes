@@ -27,10 +27,16 @@ jobs:
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
+        restore-keys: |
+          ${{ runner.os }}-m2
 
     - name: Build with Maven
       run: mvn clean package
+      env:
+        MAVEN_OPTS: "-Dmaven.repo.local=~/.m2/repository"
+
+    - name: Debug - List project files
+      run: ls -la
 
     - name: Build Docker image
       run: |
@@ -38,3 +44,5 @@ jobs:
         echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
         docker tag my-springboot-app:latest swathiselvaraju/my-springboot-app:latest
         docker push swathiselvaraju/my-springboot-app:latest
+      env:
+        DOCKER_BUILDKIT: 1
