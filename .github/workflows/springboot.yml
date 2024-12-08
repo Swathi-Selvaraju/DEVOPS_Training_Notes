@@ -38,12 +38,12 @@ jobs:
     - name: Debug - List project files
       run: ls -la
 
-    - name: Build Docker image
-      run: |
-        docker build -t my-springboot-app -f backend/Dockerfile.backend backend/
-        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-        docker tag my-springboot-app:latest swathiselvaraju/my-springboot-app:latest
-        docker push swathiselvaraju/my-springboot-app:latest
 
+    - name: Build Docker image for backend
+      run: |
+        docker build -t my-backend-app -f Dockerfile.backend .
+        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        docker tag my-backend-app:latest swathiselvaraju/my-backend-app:latest
+        docker push swathiselvaraju/my-backend-app:latest
       env:
         DOCKER_BUILDKIT: 1
