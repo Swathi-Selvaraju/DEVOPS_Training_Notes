@@ -2,7 +2,7 @@
 # 3-Tier Web Application
 This is a 3-tier application for managing employee data, built with React for the frontend, Spring Boot for the backend, and MySQL for data storage.
 
-## Project Setup
+## Phase : 0 Project Setup
 
 
 [Download zip file](https://github.com/Ranjitha75388/Tomcat/blob/main/3-tier-application-task/ems-ops-phase-0.zip) 
@@ -92,4 +92,6 @@ Install  Maven
         CREATE DATABASE databasename;
     ```
     ![Screenshot (852)](https://github.com/user-attachments/assets/36061645-5d99-497d-92cf-4456f5579be4)
+
+    Next Step : [phase 1](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Frontend-setup.md)
 
