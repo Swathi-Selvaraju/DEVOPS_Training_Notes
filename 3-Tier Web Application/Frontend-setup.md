@@ -1,5 +1,5 @@
-# Frontend Setup
-
+# Phase : 1 Frontend Setup
+[Phase 0](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Project-setup.md)
 ### Run the Application
 1. Move to the Frontend Directory
 Navigate to the frontend directory where the React code is located:
@@ -85,4 +85,6 @@ Run the following command in your terminal:
 ``` bash
 node -v
 ``` 
-If the version is 17 or higher, the --openssl-legacy-provider flag might still be necessary.
+If the version is 17 or higher, the --openssl-legacy-provider flag might still be necessary. 
+
+Next Step : [Phase 2](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Backend-setup.md)
