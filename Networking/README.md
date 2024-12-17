@@ -21,7 +21,7 @@
 * Networking enables communication between computers through structured protocols and hardware. It encompasses hardware devices, such as routers and switches, and software frameworks like protocols to ensure seamless data transfer.
 
    ![image](https://github.com/user-attachments/assets/0cd0d8c5-423b-4cd3-8ef6-d558285b50a0)
- ## 2. OSI Model
+ ## 2. OSI Model 
 
 * OSI stands for Open Systems Interconnection
 * The OSI model is a conceptual framework with seven layers that standardizes how different computer systems communicate.
@@ -29,51 +29,86 @@
   
 ### OSI Model Layers
   
-| **Layer** | **Name**              | **Function**                                     | **Examples**                          |
+| **Layer** | **Name**              | **Function**                                     |  **Examples**                         |
 |-----------|-----------------------|--------------------------------------------------|---------------------------------------|
-| **7**     | 🖥️ Application Layer  | User interface and end-user services.            | HTTP, FTP, SMTP, DNS                  |
-| **6**     | 🎨 Presentation Layer | Data formatting, encryption, compression.        | SSL/TLS, ASCII, JPEG, MP4             |
-| **5**     | 🔗 Session Layer      | Establishes, manages, and terminates sessions.   | NetBIOS, RPC, SQL                     |
-| **4**     | 📦 Transport Layer    | Reliable delivery of data and flow control.      | TCP, UDP                              |
-| **3**     | 🌍 Network Layer      | Logical addressing, routing, and forwarding.     | IP, ICMP, ARP, OSPF                   |
-| **2**     | 🛜 Data Link Layer    | Error detection and correction, physical addressing. | Ethernet, MAC, PPP, Wi-Fi         |
-| **1**     | ⚡ Physical Layer     | Transmission of raw bits over physical media.    | Cables, Hubs, Radio Frequencies       |
+| **7**     | Application Layer     | User interface and end-user services.            | HTTP, FTP, SMTP, DNS                  |
+| **6**     | Presentation Layer    | Data formatting, encryption, compression.        | SSL/TLS, ASCII, JPEG, MP4             |
+| **5**     | Session Layer         | Establishes, manages, and terminates sessions.   | NetBIOS, RPC, SQL                     |
+| **4**     | Transport Layer       | Reliable delivery of data and flow control.      | TCP, UDP                              |
+| **3**     | Network Layer         | Logical addressing, routing, and forwarding.     | IP, ICMP, ARP, OSPF                   |
+| **2**     | Data Link Layer       | Error detection and correction, physical addressing. | Ethernet, MAC, PPP, Wi-Fi         |
+| **1**     | Physical Layer        | Transmission of raw bits over physical media.    | Cables, Hubs, Radio Frequencies       |
 
-🌐 Detailed Explanation of Layers
-1. Physical Layer
-* Transmits raw binary data (0s and 1s) over physical media (wires, cables, radio signals).
-* Deals with hardware connections, signal transmission, and voltage levels.
-   * Example: Ethernet cables, hubs.
+## 3. Protocols
 
-2. Data Link Layer
-* Ensures error-free transfer of data frames between two connected nodes.
-* Uses physical addresses (MAC) for communication.
-    * Example: Ethernet (802.3), Wi-Fi (802.11).
+A **protocol** is a set of rules defining how data is transmitted and received between devices in a network. Protocols ensure standardized communication, allowing different systems to interact seamlessly.
 
-3. Network Layer
-* Handles logical addressing, routing, and forwarding of data packets.
-* Determines the best path for data to reach its destination.
-    * Example: IP, ICMP, ARP.
+### Common Networking Protocols
 
-4. Transport Layer
-* Provides end-to-end communication, ensuring reliable data delivery.
-* Handles error correction, flow control, and segmentation.
-    * Example: TCP (reliable), UDP (fast but unreliable).
+#### **1. TCP - Transmission Control Protocol**
+- Operates at the transport layer of the OSI model.
+- Establishes a connection between two devices before data exchange.
+- Ensures reliable and ordered delivery of information.
 
-5. Session Layer
-* Manages sessions (connections) between applications.
-* Starts, maintains, and terminates communication sessions.
-    * Example: Remote Procedure Call (RPC), SQL sessions.
+#### **2. IP - Internet Protocol**
+- Operates at the network layer.
+- Responsible for addressing and routing packets between devices.
+- Supports **IPv4** (e.g., `192.168.1.1`) and **IPv6** (e.g., `2001:db8::ff00:42:8329`).
 
-6. Presentation Layer
-* Translates data into a readable format for the application.
-* Handles encryption, compression, and data conversion.
-    * Example: SSL/TLS, JPEG, MP4.
+#### **3. UDP - User Datagram Protocol**
+- Operates at the transport layer.
+- Provides a connectionless service for fast, lightweight communication.
+- Suitable for real-time applications like video streaming or online gaming.
 
-7. Application Layer
-* Interfaces directly with end-users and applications.
-* Provides network services such as file transfers, email, and web browsing.
-    * Example: HTTP (web), FTP (file transfer), DNS (domain resolution).
+#### **4. HTTP/HTTPS - HyperText Transfer Protocol**
+- Operates at the application layer.
+- Used for transferring web content between browsers and servers.
+
+#### **5. DNS - Domain Name System**
+- Translates human-readable domain names (e.g., `www.example.com`) into IP addresses.
+
+---
+## 4. Subnet
+
+**Subnetting** is a technique used in computer networking to divide a larger IP network into smaller, more manageable sub-networks (subnets).
+
+### Benefits of Subnetting:
+- Efficient use of IP addresses.
+- Improved network performance.
+- Enhanced security by isolating traffic.
+
+### Key Concepts in Subnetting:
+- Each IP address consists of a **network part** and a **host part**.
+- **Subnet masks** (e.g., `255.255.255.0`) define how many bits are allocated for the network and host portions.
+
+### Example:
+Given two IPs:
+- `ip1 = 192.168.1.33`
+- `ip2 = 192.168.1.62`
+
+To calculate the subnet, determine their binary representation and apply the subnet mask.  
+The common subnet for these two IPs could be **192.168.1.0/26**.
+
+---
+
+## 5. IP Addressing
+
+An **IP Address** is a unique identifier assigned to devices on a network. It ensures data reaches the correct destination.
+
+### Types of IP Addresses:
+
+#### **1. IPv4:**
+- Format: `192.168.1.1` (32-bit address).
+- Range: 0 to 255.
+
+#### **2. IPv6:**
+- Format: `2001:0db8:85a3:0000:0000:8a2e:0370:7334` (128-bit address).
+- Provides a vast number of addresses compared to IPv4.
+
+### Private vs. Public IPs:
+- **Private IPs:** Reserved for internal use within a network (e.g., `192.168.x.x`, `10.x.x.x`).
+- **Public IPs:** Accessible on the internet and assigned by ISPs.
+
 
 
 
