@@ -88,5 +88,6 @@ The **Open Systems Interconnection (OSI) Model** is a conceptual framework used 
 7. **Physical Layer:** The letter is physically transported through trucks, cables, etc.  
 
 ---
+![image](https://github.com/user-attachments/assets/72ab2019-24e5-4af3-b0cb-fb9f125d7882)
 
 
