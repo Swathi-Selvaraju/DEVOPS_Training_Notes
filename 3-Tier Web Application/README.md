@@ -142,6 +142,6 @@ This architecture ensures clear separation of concerns, making the system modula
 
 ### Dockerization:
 * Create Dockerfiles for each service.
- ## Creating a Docker Compose File
-* Create a dockercompose file using above Dockerfile of each service and run the application automatically.
+### Creating a Docker Compose File
+Create a dockercompose file using above Dockerfile of each service and run the application automatically.
 
