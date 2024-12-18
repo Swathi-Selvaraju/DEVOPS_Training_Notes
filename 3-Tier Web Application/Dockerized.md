@@ -1,57 +1,84 @@
-# Dockerization
+Previous Step - [Phase 3](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Daemonize.md)
+# Phase 4 : Dockerization
 This document provides step-by-step instructions to Dockerize the ReactJS frontend, Spring Boot backend, and MySQL database, and deploy the application using Docker Compose.
 
 ## Prerequisites
 * Docker (Ensure Docker is installed and running)
 * Docker Compose (Typically included with Docker Desktop or installed separately)
+  >  `Docker Compose` is a tool that define and run multiple Docker containers using a single configuration file, typically named docker-compose.yml. This file uses YAML syntax to specify the services, networks, and volumes required for the application.
 
-1. React Frontend
+### 1. React JS Frontend
 * Navigate to the `frontend folder`
-```bash
-cd ems-ops-phase-0/react-hooks-frontend/
-```
+  ```bash
+   cd ems-ops-phase-0/react-hooks-frontend/
+   ```
 * Create a `Dockerfile`
 
-```bash
-sudo nano Dockerfile
-```
-* Add the following content:
-Dockerfile` for frontend
-```bash
+  ```bash
+   sudo nano Dockerfile
+  ```
+*  Add the following content:
+   Dockerfile` for frontend
+   ```bash
 
-# Use a lightweight Node.js image
-FROM node:16-alpine
+   # Use a lightweight Node.js image
+   FROM node:16-alpine
 
-# Set the working directory
-WORKDIR /app
+   # Set the working directory
+   WORKDIR /app
 
-# Copy package files and install dependencies
-COPY package*.json ./
-RUN npm install
+   # Copy package files and install dependencies
+   COPY package*.json ./
+   RUN npm install
 
-# Copy the entire application code
-COPY . .
+   # Copy the entire application code
+   COPY . .
 
-# Build the application
-RUN npm run build
+   # Build the application
+   RUN npm run build
 
-# Expose port 3000 for the frontend
-EXPOSE 3000
+   # Expose port 3000 for the frontend
+   EXPOSE 3000
 
-# Serve the static files using 'serve'
-CMD ["npx", "serve", "-s", "build", "-l", "3000"]
-```
+   # Serve the static files using 'serve'
+   CMD ["npx", "serve", "-s", "build", "-l", "3000"]
+    ```
 ##### Give permission to `Dockerfile` for access Docker service
-```bash
-sudo chmod +x Dockerfile
-sudo chown -R swathi:swathi Dockerfile
-```
+  ```bash
+      sudo chmod +x Dockerfile
+      sudo chown -R swathi:swathi Dockerfile
+  ```
 
 ![image](https://github.com/user-attachments/assets/f9cb9ecf-9354-4283-b9d6-d2ab77786865)
+### Dockerfile Explanation
+The `Dockerfile` is optimized for production and uses a lightweight Node.js image. Below is a step-by-step explanation:
+1. **Base Image:**
+` FROM node:16-alpine`
+* Starts with the lightweight node:16-alpine image, which is ideal for production because of its small size and reduced attack surface.
+2. **Set Working Directory:**
+ `WORKDIR /app`
+* Sets the working directory inside the container to `/app`. All subsequent commands will operate relative to this directory.
+3. **Copy Dependency Files:**
+` COPY package*.json ./
+  RUN npm install`
+* Copies the package.json and package-lock.json (if present) to the working directory.
+* Installs the application dependencies using npm install.
+4. **Copy Application Code:**
+ `COPY . .`
+* Copies all files from the current directory on the host machine to the working directory (/app) in the container.
+5. **Build the Application:**
+  `RUN npm run build`
+* Executes the build script defined in the package.json file to generate production-ready static files, typically stored in the build directory.
+6. **Expose Application Port:**
+ `EXPOSE 3000`
+* Informs Docker that the container will listen on port 3000, allowing external access to the application.
+7. **Serving Static Files:**
+`CMD ["npx", "serve", "-s", "build", "-l", "3000"]`
+* Uses npx serve to serve the static files in the build directory over port 3000.
+---
 
 
-
-2.  Spring Boot Backend
+### 2.  Spring Boot Backend
 * Navigate to the `backend `folder
 ```bash
 cd ems-ops-phase-0/springboot-backend/
