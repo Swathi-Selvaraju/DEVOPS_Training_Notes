@@ -4,15 +4,7 @@ This is a 3-tier application for managing employee data, built with React for th
 
 ## Phase : 0 Project Setup
 
-
-[Download zip file](https://github.com/Ranjitha75388/Tomcat/blob/main/3-tier-application-task/ems-ops-phase-0.zip) 
-
-```
-unzip ems-ops-phase-0.zip
-```
-
-
-## Installation
+## Prerequisites Installation
  #### Tools
     * Java 17 
     * Maven 3.8.8
