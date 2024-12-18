@@ -1,10 +1,6 @@
+Previous  Step - [phase 1](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Frontend-setup.md)
+# Phase 2 : Backend Setup
 
-# Backend Setup
-
-#### Move the project from `local` to `wsl`
-```bash
-mv /mnt/c/Users/swathi/Downloads/ems-ops-phase-0 /home/swathi/ 
-```
 ####  Move to `backend directory`
 ```bash
  cd /ems-ops-phase-0/springboot-backend
@@ -59,5 +55,5 @@ java -jar springboot-backend-0.0.1-SNAPSHOT.jar
 ```
 ![image](https://github.com/user-attachments/assets/791c341d-1bf4-4c07-9d46-943319615b23)
 
-
+Next Step - [Phase 3](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Daemonize.md)
 
