@@ -1,5 +1,27 @@
 # Phase : 1 Frontend Setup
-[Phase 0](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Project-setup.md)
+Before build application Pre-requisites Installation Step follows[Phase 0](https://github.com/Swathi-Selvaraju/DEVOPS_Training_Notes/blob/main/3-Tier%20Web%20Application/Project-setup.md)
+ ### Steps - Unzip the file
+
+- Unzip file was given by team. 'ems-ops-phase-0.zip'
+- Use the cd command to change to the Downloads directory (or wherever your ZIP file is located)
+    ```
+        cd ~/Downloads
+    ```
+- Use the unzip command followed by the name of your ZIP file to extract it.
+     ```
+        sudo apt install unzip
+        unzip filename.zip -d /path/to/destination/
+    ```
+-  After extract the zip file
+    ```
+        cd/ems-ops-phase-0/
+    ```
+-  After extracting, you might want to move into the project directory a subdirectory created during extraction.
+    ```
+        cd /home/swathi/Downloads/ems-ops-phase-0/react-hooks-frontend
+    ``` 
+    
+
 ### Run the Application
 1. Move to the Frontend Directory
 Navigate to the frontend directory where the React code is located:
