@@ -16,11 +16,15 @@ Before build application Pre-requisites Installation Step follows[Phase 0](https
     ```
         cd/ems-ops-phase-0/
     ```
+
 -  After extracting, you might want to move into the project directory a subdirectory created during extraction.
     ```
         cd /home/swathi/Downloads/ems-ops-phase-0/react-hooks-frontend
     ``` 
-    
+-  Another way to download `zip` locally and move to wsl
+    ```
+        mv /mnt/c/Users/swathi/Downloads/ems-ops-phase-0 /home/swathi/
+    ```
 
 ### Run the Application
 1. Move to the Frontend Directory
