@@ -150,6 +150,7 @@ sudo logrotate -f /etc/logrotate.d/tomcat
    sudo systemctl stop tomcat
    ```
 2. Ensure that the email is sent successfully when Tomcat is down.
+![image](https://github.com/user-attachments/assets/cdab31a1-f523-4bdd-b1e1-df05b34434be)
 
 
 
