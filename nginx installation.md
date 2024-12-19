@@ -63,6 +63,7 @@ pidof nginx
 Then, kill the process using the PID:
 ```bash
 sudo kill -TERM <PID>
+```
 ![Screenshot (796)](https://github.com/user-attachments/assets/890857bd-203b-420d-b4d4-78c735a5ea7a)
 ![Screenshot (798)](https://github.com/user-attachments/assets/b67d38a8-989a-4f35-bba3-ff07cf6a293a)
 ![Screenshot (799)](https://github.com/user-attachments/assets/a7747447-763e-4315-9efb-16015bb40831)
