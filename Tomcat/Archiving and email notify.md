@@ -31,6 +31,8 @@ sudo apt-get install logrotate
        endscript
    }
    ```
+  
+
 3. Save and close the file using `Ctrl+O`, `Enter`, and `Ctrl+X`.
 
 ### Step 3: Test Configuration
@@ -64,6 +66,8 @@ sudo logrotate -f /etc/logrotate.d/tomcat
        echo "Tomcat has stopped or failed to start!" | mail -s "Tomcat Service Alert" admin@example.com
    fi
    ```
+   ![Screenshot 2024-11-10 195933](https://github.com/user-attachments/assets/bebc6046-5028-47fd-b156-ad8d4859292e)
+
 3. Make the script executable:
    ```bash
    sudo chmod +x /usr/local/bin/check_tomcat.sh
@@ -79,6 +83,9 @@ sudo logrotate -f /etc/logrotate.d/tomcat
      ```
      [smtp.gmail.com]:587
      ```
+![Screenshot 2024-11-09 200517](https://github.com/user-attachments/assets/fe82df50-b8a3-44d7-bd22-e9a4cc98b590)
+![Screenshot 2024-11-09 201141](https://github.com/user-attachments/assets/c8bb98bc-139d-4afc-9285-bbb799dd2f3f)
+![Screenshot 2024-11-09 201505](https://github.com/user-attachments/assets/7b478fdd-25c9-4e83-b7e0-928c39ffa694)
 
 #### 2. Set Up Postfix to Use Gmail's SMTP Server
 1. Edit the Postfix configuration file:
@@ -94,6 +101,9 @@ sudo logrotate -f /etc/logrotate.d/tomcat
    smtp_tls_security_level = encrypt
    smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
    ```
+
+   ![Screenshot 2024-11-10 204137](https://github.com/user-attachments/assets/685681ed-faef-437e-917d-51b44506a42a)
+
 3. Create the `sasl_passwd` file to store your Gmail credentials:
    ```bash
    sudo nano /etc/postfix/sasl_passwd
@@ -102,6 +112,8 @@ sudo logrotate -f /etc/logrotate.d/tomcat
    ```
    [smtp.gmail.com]:587 your-email@gmail.com:your-app-password
    ```
+   ![Screenshot 2024-11-10 203659](https://github.com/user-attachments/assets/aa57f13f-361f-4e5c-a43b-19c0d2d42a04)
+
 4. Secure and hash the password file:
    ```bash
    sudo chmod 600 /etc/postfix/sasl_passwd
@@ -116,6 +128,8 @@ sudo logrotate -f /etc/logrotate.d/tomcat
 1. Enable **2-Step Verification** in your Google Account under the **Security** section.
 2. Generate an **App Password** under **App Passwords** and copy the 16-character password.
 3. Use this password in the `sasl_passwd` file instead of your Google account password.
+![Screenshot 2024-11-10 163020](https://github.com/user-attachments/assets/bf07e215-cc30-40b1-b78e-b466feb0c8c0)
+![Screenshot (821)](https://github.com/user-attachments/assets/8ca68b71-77b8-42fc-9dce-0d92bf31ce9f)
 
 ### Step 4: Set Up a Cron Job
 1. Open your crontab for editing:
@@ -127,6 +141,8 @@ sudo logrotate -f /etc/logrotate.d/tomcat
    0 * * * * /usr/local/bin/check_tomcat.sh
    ```
 3. Save and exit.
+   
+![Screenshot 2024-11-10 175048](https://github.com/user-attachments/assets/1674d242-3329-4e77-8f4c-0123d59fb9ea)
 
 ### Step 5: Test the Script
 1. Stop Tomcat manually to test the email notification:
@@ -135,12 +151,5 @@ sudo logrotate -f /etc/logrotate.d/tomcat
    ```
 2. Ensure that the email is sent successfully when Tomcat is down.
 
----
 
-### Screenshots
 
-- **Logrotate Configuration:**
-  ![Logrotate Screenshot](path-to-logrotate-image.jpeg)
-
-- **Email Notification Setup:**
-  ![Postfix Setup Screenshot](path-to-postfix-image.jpeg)
