@@ -120,3 +120,5 @@ SSH supports two main types of authentication:
    ```bash
    ssh <username>@<hostname>
    ```
+# Resource
+[SSH Keygen ](https://www.geeksforgeeks.org/how-to-generate-ssh-key-with-ssh-keygen-in-linux/)
