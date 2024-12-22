@@ -1,4 +1,4 @@
 # Docker Learning
-* Phase 0 : 
-* Phase 1 :
-* Phase 2 : 
+* Phase 0 : Installation
+* Phase 1 : Commands
+* Phase 2 : Volume
