@@ -45,12 +45,15 @@ To ensure that Docker was installed correctly, check its version.
 ```bash
 docker --version
 ```
+![image](https://github.com/user-attachments/assets/f395c2b1-4051-4462-9a52-54c432e284e5)
+
 ## Step 8: Verify Docker Installation
 Check Docker’s status to ensure it is installed and running.
 
 ```bash
 sudo systemctl status docker
 ```
+![image](https://github.com/user-attachments/assets/280081d7-1d4b-46bb-9d42-d614f709d2d2)
 
 ## Step 9: Enable Docker to Start on Boot
 Enable the Docker service to start automatically at boot.
@@ -83,3 +86,4 @@ Run a test container to confirm Docker is working correctly:
 ```bash
 docker run hello-world
 ```
+![image](https://github.com/user-attachments/assets/d01c7cef-b807-46d0-93a9-0dbac1b1428e)
