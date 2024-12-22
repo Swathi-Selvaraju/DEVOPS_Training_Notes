@@ -27,6 +27,7 @@
 - Identidy by card
 - Use **VISA or mastero** card for creating account
 -  fill the details and click `sign up`
+-  sign up [link](https://azure.microsoft.com/en-in/get-started/azure-portal)
 ## 1.3 Default Directory and Create users
 - Once you have create your account, default directory gets automatically created, so the domain that is provided for your default directory is based on the email that you give while creating.
 #### Example
