@@ -65,12 +65,12 @@ Docker Volumes are a popular and effective method for assuring data permanence w
 - The **container ID** of the running container you want to access. This can also be replaced with the container name.
 
 - **/bin/bash**: Specifies the command to execute inside the container. Here, it opens a Bash shell.
-![image](https://github.com/user-attachments/assets/9fdafe8a-96ea-434d-be1b-98ccff4ab8ea)
+- ![image](https://github.com/user-attachments/assets/9fdafe8a-96ea-434d-be1b-98ccff4ab8ea)
 
 
 - In root mode ,update the apt first then install nano package for open and  editing the script file
 
-- ![image](https://github.com/user-attachments/assets/1eb790fc-c20c-4c3c-a37d-a63f734e3aa6)
+  ![image](https://github.com/user-attachments/assets/1eb790fc-c20c-4c3c-a37d-a63f734e3aa6)
 
 
 ##### Change the code
